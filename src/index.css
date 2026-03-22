@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import "tailwindcss";
+
+:root {
+  --accent: #915EFF;
+  --accent2: #00cea8;
+  --dark: #050816;
+  --card: #1d1836;
+  --card2: #151030;
+  --text: #aaa6c3;
+  --white: #f3f3f3;
+  --border: rgba(145, 94, 255, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.section-heading span { color: var(--accent); }
+
+.gradient-text {
+  background: linear-gradient(135deg, #915EFF, #00cea8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tag-pill {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: rgba(145, 94, 255, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(145, 94, 255, 0.25);
+  border-radius: 20px;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 20px 60px rgba(145, 94, 255, 0.15);
+}
+
+.spline-watermark-cover {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 52px;
+  background: var(--dark);
+  z-index: 10;
+}
+
+.spline-watermark-cover-card {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 52px;
+  background: var(--card2);
+  z-index: 10;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
