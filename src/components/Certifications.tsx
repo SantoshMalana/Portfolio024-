@@ -42,86 +42,104 @@ export default function Certifications() {
         gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
         gap: '20px',
       }}>
-        {certifications.map((cert, i) => (
-          <motion.div
-            key={cert.title}
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.12 }}
-            whileHover={{
-              y: -6,
-              borderColor: cert.color + '60',
-              boxShadow: `0 16px 50px ${cert.color}15`,
-            }}
-            style={{
-              background: '#1d1836',
-              border: '1px solid rgba(145,94,255,0.15)',
-              borderRadius: '16px',
-              padding: '28px 24px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              cursor: 'default',
-              transition: 'all 0.3s ease',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            {/* Background accent */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              height: '3px',
-              background: `linear-gradient(90deg, ${cert.color}, transparent)`,
-            }} />
+        {certifications.map((cert, i) => {
+          const CardTag = cert.link ? motion.a : motion.div
+          const linkProps = cert.link ? { href: cert.link, target: '_blank', rel: 'noreferrer' } : {}
 
-            {/* Badge */}
-            <div style={{
-              width: '52px',
-              height: '52px',
-              borderRadius: '12px',
-              background: cert.bg,
-              border: `1px solid ${cert.color}30`,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontFamily: 'Syne, sans-serif',
-              fontSize: '16px',
-              fontWeight: 800,
-              color: cert.color,
-            }}>
-              {cert.abbr}
-            </div>
-
-            <div>
-              <div style={{
-                fontSize: '15px',
-                fontWeight: 600,
-                color: '#f3f3f3',
-                fontFamily: 'Syne, sans-serif',
-                lineHeight: 1.4,
-                marginBottom: '6px',
-              }}>
-                {cert.title}
-              </div>
-              <div style={{ fontSize: '12px', color: cert.color, marginBottom: '4px' }}>
-                {cert.issuer}
-              </div>
-              <div style={{
+          return (
+            <CardTag
+              key={cert.title}
+              {...linkProps}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              whileHover={{
+                y: -6,
+                borderColor: cert.color + '60',
+                boxShadow: `0 16px 50px ${cert.color}15`,
+              }}
+              style={{
+                textDecoration: 'none',
+                background: '#1d1836',
+                border: '1px solid rgba(145,94,255,0.15)',
+                borderRadius: '16px',
+                padding: '28px 24px',
                 display: 'flex',
-                alignItems: 'center',
-                gap: '5px',
-                fontSize: '11px',
-                color: '#aaa6c3',
-              }}>
-                <Award size={11} />
-                {cert.date}
+                flexDirection: 'column',
+                gap: '14px',
+                cursor: cert.link ? 'pointer' : 'default',
+                transition: 'all 0.3s ease',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Background accent */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '3px',
+                background: `linear-gradient(90deg, ${cert.color}, transparent)`,
+              }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                {/* Badge */}
+                <div style={{
+                  width: '52px',
+                  height: '52px',
+                  borderRadius: '12px',
+                  background: cert.bg,
+                  border: `1px solid ${cert.color}30`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: 'Syne, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: 800,
+                  color: cert.color,
+                }}>
+                  {cert.abbr}
+                </div>
+
+                {cert.link && (
+                  <div style={{ color: 'rgba(170,166,195,0.4)' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                )}
               </div>
-            </div>
-          </motion.div>
-        ))}
+
+              <div>
+                <div style={{
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  color: '#f3f3f3',
+                  fontFamily: 'Syne, sans-serif',
+                  lineHeight: 1.4,
+                  marginBottom: '6px',
+                }}>
+                  {cert.title}
+                </div>
+                <div style={{ fontSize: '12px', color: cert.color, marginBottom: '4px' }}>
+                  {cert.issuer}
+                </div>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  fontSize: '11px',
+                  color: '#aaa6c3',
+                }}>
+                  <Award size={11} />
+                  {cert.date}
+                </div>
+              </div>
+            </CardTag>
+          )
+        })}
       </div>
 
       {/* Education card */}

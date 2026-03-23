@@ -52,35 +52,45 @@ function ProjectCard({ project, index, inView }: { project: typeof projects[0], 
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Geometric decoration */}
-        <div style={{
-          position: 'absolute',
-          right: '-20px',
-          top: '-20px',
-          width: '120px',
-          height: '120px',
-          borderRadius: '50%',
-          border: `1px solid ${project.color}20`,
-        }} />
-        <div style={{
-          position: 'absolute',
-          right: '10px',
-          top: '10px',
-          width: '60px',
-          height: '60px',
-          borderRadius: '50%',
-          border: `1px solid ${project.color}15`,
-        }} />
-        <span style={{
-          fontFamily: 'Syne, sans-serif',
-          fontSize: '32px',
-          fontWeight: 800,
-          color: `${project.color}20`,
-          letterSpacing: '-1px',
-        }}>
-          {project.name.slice(0, 2).toUpperCase()}
-        </span>
-        {project.featured && (
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={project.name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          <>
+            {/* Geometric decoration */}
+            <div style={{
+              position: 'absolute',
+              right: '-20px',
+              top: '-20px',
+              width: '120px',
+              height: '120px',
+              borderRadius: '50%',
+              border: `1px solid ${project.color}20`,
+            }} />
+            <div style={{
+              position: 'absolute',
+              right: '10px',
+              top: '10px',
+              width: '60px',
+              height: '60px',
+              borderRadius: '50%',
+              border: `1px solid ${project.color}15`,
+            }} />
+            <span style={{
+              fontFamily: 'Syne, sans-serif',
+              fontSize: '32px',
+              fontWeight: 800,
+              color: `${project.color}20`,
+              letterSpacing: '-1px',
+            }}>
+              {project.name.slice(0, 2).toUpperCase()}
+            </span>
+          </>
+        )}
+        {project.featured && !project.image && (
           <div style={{
             position: 'absolute',
             top: '12px',

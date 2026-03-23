@@ -73,6 +73,7 @@ export const projects = [
     live: 'https://syncspace-realtime-collaboration-pl.vercel.app',
     color: '#915EFF',
     featured: true,
+    image: '/syncspace-banner.png',
   },
   {
     name: 'Rideshare Hub',
@@ -82,6 +83,7 @@ export const projects = [
     live: 'https://rideshare-connect-main.vercel.app/',
     color: '#00cea8',
     featured: true,
+    image: '/rideshare-banner.png',
   },
   {
     name: 'Loan Management System',
@@ -91,6 +93,7 @@ export const projects = [
     live: 'https://loan-management-system-kappa-eight.vercel.app/',
     color: '#bf61ff',
     featured: true,
+    image: '/loan-management-banner.png',
   },
   {
     name: 'Haleem — Perfume Store',
@@ -100,6 +103,7 @@ export const projects = [
     live: 'https://haleem-ten.vercel.app/',
     color: '#F7DF1E',
     featured: true,
+    image: '/haleem-banner.png',
   },
   {
     name: 'Real-Time Process Monitor',
@@ -109,6 +113,7 @@ export const projects = [
     live: '',
     color: '#00cea8',
     featured: false,
+    image: '/process_monitor_banner.png',
   },
   {
     name: 'Donate Blood Save Lives',
@@ -118,6 +123,7 @@ export const projects = [
     live: '',
     color: '#F80000',
     featured: false,
+    image: '/blood_donate_banner.png',
   },
   {
     name: 'Weather Alert Scheduler',
@@ -127,6 +133,7 @@ export const projects = [
     live: '',
     color: '#3178C6',
     featured: false,
+    image: '/weather_alert_banner.png',
   },
   {
     name: 'Simon Game',
@@ -136,6 +143,7 @@ export const projects = [
     live: '',
     color: '#F7DF1E',
     featured: false,
+    image: '/simon-game-banner.png',
   },
   {
     name: 'Portfolio Website',
@@ -145,6 +153,7 @@ export const projects = [
     live: '',
     color: '#915EFF',
     featured: false,
+    image: '/portfolio_banner.png',
   },
 ]
 
@@ -156,6 +165,16 @@ export const certifications = [
     abbr: 'OR',
     color: '#F80000',
     bg: 'rgba(248,0,0,0.08)',
+    link: 'https://drive.google.com/file/d/1k1AxNALgZRZGdZ1s8ATgy4F7Ahj0LDtx/view?usp=drive_link',
+  },
+  {
+    title: 'Oracle Cloud Infrastructure 2025 AI Foundations Associate',
+    issuer: 'Oracle Corporation',
+    date: '2025',
+    abbr: 'AI',
+    color: '#F80000',
+    bg: 'rgba(248,0,0,0.08)',
+    link: 'https://drive.google.com/file/d/1fqE_JuOaGumVZvUNwzAi13jisP4wTlGM/view?usp=drive_link',
   },
   {
     title: 'Backend JSON Schema Developer',
@@ -164,6 +183,7 @@ export const certifications = [
     abbr: 'M1',
     color: '#00cea8',
     bg: 'rgba(0,206,168,0.08)',
+    link: 'https://drive.google.com/file/d/13DEpFJFljHOk5iRHOcVboMexcc9V1WbM/view?usp=sharing',
   },
   {
     title: 'Cloud Computing — Elite',
@@ -172,6 +192,7 @@ export const certifications = [
     abbr: 'NP',
     color: '#915EFF',
     bg: 'rgba(145,94,255,0.08)',
+    link: 'https://drive.google.com/file/d/1pf5va761HL972cgI6onGbreBaz8dFb69/view?usp=drive_link',
   },
   {
     title: 'Code-A-Hunt Hackathon',
@@ -180,5 +201,6 @@ export const certifications = [
     abbr: 'CB',
     color: '#bf61ff',
     bg: 'rgba(191,97,255,0.08)',
+    link: 'https://drive.google.com/file/d/1YVy5zrmL8SpZgwSrXq_GdO_olpCX-04w/view?usp=sharing',
   },
 ]
