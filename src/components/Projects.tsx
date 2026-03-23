@@ -56,6 +56,7 @@ function ProjectCard({ project, index, inView }: { project: typeof projects[0], 
           <img 
             src={project.image} 
             alt={project.name}
+            loading="lazy"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         ) : (

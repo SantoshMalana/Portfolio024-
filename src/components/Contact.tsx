@@ -137,24 +137,13 @@ export default function Contact() {
                 <span style={{ fontSize: '12px', color: '#aaa6c3' }}>Loading robot...</span>
               </div>
             }>
-              <Spline scene="/robot.splinecode" />
+              {inView && <Spline scene="/robot.splinecode" />}
             </Suspense>
             {/* Watermark cover */}
             <div className="spline-watermark-cover-card" />
           </div>
 
-          <div style={{
-            position: 'relative',
-            zIndex: 2,
-            fontSize: '11px',
-            color: 'rgba(170,166,195,0.4)',
-            letterSpacing: '1px',
-            textTransform: 'uppercase',
-            padding: '16px',
-            textAlign: 'center',
-          }}>
-            Cursor-reactive · powered by Spline
-          </div>
+
         </div>
 
         {/* RIGHT — Form */}
